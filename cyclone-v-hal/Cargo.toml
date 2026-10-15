@@ -1,6 +1,13 @@
 [package]
-name = "cyclone-v-hal"
-version = "0.1.0"
-edition = "2024"
+name          = "cyclone-v-hal"
+version       = "0.1.0"
+edition       = "2024"
+rust-version  = "1.95.0"
+description   = "Bare-metal HAL for Cyclone V family"
+documentation = "https://docs.espressif.com/projects/rust/esp-hal/latest/"
+keywords      = ["embedded", "embedded-hal", "cyclone-v", "hal"]
+categories    = ["embedded", "hardware-support", "no-std"]
+repository    = "https://github.com/voidreg"
+license       = "MIT OR Apache-2.0"
 
 [dependencies]
