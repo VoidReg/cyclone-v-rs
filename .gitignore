@@ -1,0 +1,23 @@
+# COmpielr output
+debug/
+target/
+
+# Locked Cargo.lock
+Cargo.lock
+
+# rustfmt backup files
+**/*.rs.bk
+
+# MSVC compielr debugging symbols
+*.pdb
+
+# VSCode configs
+**/.vscode/
+
+# crates.io generated documentation
+docs/
+
+# Agents
+.codex
+.aws
+.agents

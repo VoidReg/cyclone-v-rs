@@ -1,8 +1,6 @@
-# cyclone-v-rs
+# cyclone-v-hal
 
-## Summary
-
-Bare-metal Rust support for Cyclone V Family.
+Bare-metal HAL Rust support for Cyclone V Family.
 
 ## LICENSE
 [MIT](LICENSE) - Copyright © 2026 VoidReg.
