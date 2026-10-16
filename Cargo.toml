@@ -5,4 +5,4 @@ exclude = [
     "cyclone-v-rt",
     "cyclone-v-bootloader",
 ]
-members = ["cyclone-v-bootloader", "cyclone-v-image", "cyclone-v-pack", "cyclone-v-rt"]
+members = ["cyclone-v-bootloader", "cyclone-v-image", "cyclone-v-rt"]
