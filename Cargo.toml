@@ -2,4 +2,7 @@
 resolver = "3"
 exclude = [
     "cyclone-v-hal",
+    "cyclone-v-rt",
+    "cyclone-v-bootloader",
 ]
+members = ["cyclone-v-bootloader", "cyclone-v-rt"]

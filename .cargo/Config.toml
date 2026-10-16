@@ -1,0 +1,5 @@
+[target.armv7a-none-eabi]
+linker = "rust-lld"
+rustflags = [
+    "-C", "target-cpu=cortex-a9",
+]
