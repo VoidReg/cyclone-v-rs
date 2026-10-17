@@ -1,25 +1,34 @@
-# sidermux-hal
+<div align="center">
+  <picture>
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="https://raw.githubusercontent.com/sidermux/sidermux-assets/main/logos/logo-horizontal.svg"
+    >
+    <img
+      alt="sidermux-hal"
+      src="https://raw.githubusercontent.com/sidermux/sidermux-assets/main/logos/logo-horizontal-light.svg"
+      width="420"
+    >
+  </picture>
 
-Bare-metal HAL for SoC FPGAs — one interface across supported architectures,
-SoCs, and boards. Adding a board or architecture goes through a unified
-surface instead of a new project.
+  <p>
+    <strong>Bare-metal HAL for SoC FPGAs: one interface across architectures, SoCs, and boards.</strong>
+  </p>
 
-## Crates
+  <p>
+    <a href="https://docs.rs/sidermux-hal">Documentation</a>
+  </p>
+</div>
 
-| Crate | Role |
-|---|---|
-| `sidermux-hal` | Unified HAL facade: SoC, architecture, and board modules |
-| `sidermux-rt` | Runtime startup, selected per architecture |
-| `sidermux-bootloader` | Bootable image flow; SoC boot profiles live here |
+> [!WARNING]
+> **Beta software.** This project is pre-release and breaking changes may
+> happen frequently between versions. Pin the exact version you depend on.
 
-## Targets
+---
 
-- **Cyclone V** (Intel/Altera SoC FPGA, dual Cortex-A9, `armv7a-none-eabi`)
-
-## Target selection
-
-SoC features live on `sidermux-hal` and imply their architecture. The
-bootloader forwards its own SoC feature to both the HAL and the runtime.
+Cyclone V is the first supported SoC (`armv7a-none-eabi`, dual Cortex-A9).
+SoC, architecture, and board support are feature-gated modules behind one
+unified surface; no additional hardware families are claimed as supported.
 
 | Feature | Effect |
 |---|---|
@@ -30,7 +39,9 @@ bootloader forwards its own SoC feature to both the HAL and the runtime.
 `sidermux-hal` builds target-independent with no SoC selected;
 `sidermux-bootloader` requires exactly one SoC feature.
 
-## Building the boot image
+## Quick start
+
+Build the bootable image:
 
 ```sh
 cargo build -p sidermux-bootloader --target armv7a-none-eabi --features cyclone-v
@@ -39,6 +50,32 @@ cargo build -p sidermux-bootloader --target armv7a-none-eabi --features cyclone-
 In VS Code, the default build task (`Ctrl+Shift+B`) prompts for the SoC
 target; rust-analyzer is preconfigured to match.
 
-## LICENSE
+## Workspace
 
-MIT or Apache 2.0 - Copyright © 2026 sidermux.
+```text
+sidermux-hal/
+├── sidermux-hal/          # unified HAL: SoC, architecture, and board modules
+├── sidermux-rt/           # runtime startup, selected per architecture
+└── sidermux-bootloader/   # bootable image; SoC boot profiles live here
+```
+
+## Documentation
+
+The full documentation — target selection, boot flow layering, and
+extension points — lives in the Rust API docs:
+
+- [`sidermux-hal`](https://docs.rs/sidermux-hal) — unified HAL surface and
+  responsibility split
+- [`sidermux-rt`](https://docs.rs/sidermux-rt) — runtime startup contracts
+- [`sidermux-bootloader`](https://docs.rs/sidermux-bootloader) — bootable
+  image and boot profiles
+
+Or read them locally:
+
+```sh
+cargo doc --workspace --no-deps --features sidermux-bootloader/cyclone-v --open
+```
+
+## License
+
+MIT or Apache 2.0. Copyright © 2026 sidermux.
