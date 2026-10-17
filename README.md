@@ -47,9 +47,6 @@ Build the bootable image:
 cargo build -p sidermux-bootloader --target armv7a-none-eabi --features cyclone-v
 ```
 
-In VS Code, the default build task (`Ctrl+Shift+B`) prompts for the SoC
-target; rust-analyzer is preconfigured to match.
-
 ## Workspace
 
 ```text
