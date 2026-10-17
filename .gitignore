@@ -11,8 +11,10 @@ Cargo.lock
 # MSVC compielr debugging symbols
 *.pdb
 
-# VSCode configs
-**/.vscode/
+# VSCode: track shared project config only (board/target selection)
+**/.vscode/*
+!**/.vscode/settings.json
+!**/.vscode/tasks.json
 
 # crates.io generated documentation
 docs/

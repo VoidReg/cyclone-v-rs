@@ -1,0 +1,9 @@
+{
+    // IDE checking mirrors a bootloader build: the cross target of the
+    // selected SoC family, with the bootloader's SoC feature forwarding the
+    // selection to the HAL (soc + arch) and the runtime (startup).
+    // Keep in sync with the target input in tasks.json.
+    "rust-analyzer.cargo.target": "armv7a-none-eabi",
+    "rust-analyzer.cargo.features": ["sidermux-bootloader/cyclone-v"],
+    "rust-analyzer.check.allTargets": false
+}

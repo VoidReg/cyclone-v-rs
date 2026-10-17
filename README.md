@@ -30,6 +30,15 @@ bootloader forwards its own SoC feature to both the HAL and the runtime.
 `sidermux-hal` builds target-independent with no SoC selected;
 `sidermux-bootloader` requires exactly one SoC feature.
 
+## Building the boot image
+
+```sh
+cargo build -p sidermux-bootloader --target armv7a-none-eabi --features cyclone-v
+```
+
+In VS Code, the default build task (`Ctrl+Shift+B`) prompts for the SoC
+target; rust-analyzer is preconfigured to match.
+
 ## LICENSE
 
 MIT or Apache 2.0 - Copyright © 2026 sidermux.

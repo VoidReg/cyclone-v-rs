@@ -1,0 +1,56 @@
+{
+    "version": "2.0.0",
+    // SoC selection: exactly one, matching sidermux-bootloader [features].
+    // When a new SoC lands, add it to the options and switch the --target
+    // in the tasks below (the architecture follows the SoC:
+    // cyclone-v -> armv7a-none-eabi).
+    "inputs": [
+        {
+            "id": "sidermuxTarget",
+            "type": "pickString",
+            "description": "SoC target feature (exactly one)",
+            "options": ["cyclone-v"],
+            "default": "cyclone-v"
+        }
+    ],
+    "tasks": [
+        {
+            "label": "sidermux: build bootloader",
+            "detail": "cargo build -p sidermux-bootloader --target armv7a-none-eabi --features <SoC>",
+            "type": "shell",
+            "command": "cargo",
+            "args": [
+                "build",
+                "-p",
+                "sidermux-bootloader",
+                "--target",
+                "armv7a-none-eabi",
+                "--features",
+                "${input:sidermuxTarget}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$rustc",
+            "presentation": {
+                "clear": true
+            }
+        },
+        {
+            "label": "sidermux: clippy bootloader",
+            "type": "shell",
+            "command": "cargo",
+            "args": [
+                "clippy",
+                "-p",
+                "sidermux-bootloader",
+                "--target",
+                "armv7a-none-eabi",
+                "--features",
+                "${input:sidermuxTarget}"
+            ],
+            "problemMatcher": "$rustc"
+        }
+    ]
+}
