@@ -1,4 +1,4 @@
-use std::{env, fs, path::PathBuf};
+use std::{env, fs, path::{Path, PathBuf}};
 
 fn main() {
     let manifest = PathBuf::from(env::var_os("CARGO_MANIFEST_DIR").unwrap());
@@ -29,7 +29,7 @@ fn main() {
     println!("cargo::rustc-link-arg=-Tlinkall.x");
 }
 
-fn stage(manifest: &PathBuf, out: &PathBuf, source: &str, destination: &str) {
+fn stage(manifest: &Path, out: &Path, source: &str, destination: &str) {
     let source = manifest.join(source);
     let destination = out.join(destination);
 
