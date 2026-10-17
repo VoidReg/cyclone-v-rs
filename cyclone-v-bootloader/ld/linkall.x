@@ -14,7 +14,8 @@ INCLUDE boot.x
 
 INCLUDE cyclone-v-text.x
 INCLUDE cyclone-v-rodata.x
+INCLUDE cyclone-v-unwind.x
 INCLUDE cyclone-v-data.x
+INCLUDE boot-pack-reserve.x
 INCLUDE cyclone-v-bss.x
-
-INCLUDE stack.x
+INCLUDE cyclone-v-stack.x

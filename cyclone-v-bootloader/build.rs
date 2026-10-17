@@ -7,7 +7,7 @@ fn main() {
     let scripts = [
         ("ld/linkall.x", "linkall.x"),
         ("ld/sections/boot.x", "boot.x"),
-        ("ld/sections/stack.x", "stack.x"),
+        ("ld/sections/boot-pack-reserve.x", "boot-pack-reserve.x"),
     ];
 
     for (source, destination) in scripts {

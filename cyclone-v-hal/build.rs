@@ -10,6 +10,8 @@ fn main() {
         ("ld/sections/rodata.x", "cyclone-v-rodata.x"),
         ("ld/sections/data.x", "cyclone-v-data.x"),
         ("ld/sections/bss.x", "cyclone-v-bss.x"),
+        ("ld/sections/unwind.x", "cyclone-v-unwind.x"),
+        ("ld/sections/stack.x", "cyclone-v-stack.x"),
     ];
 
     for (source, destination) in scripts {

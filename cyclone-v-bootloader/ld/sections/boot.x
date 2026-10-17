@@ -1,5 +1,7 @@
 ENTRY(boot_entry)
 
+__boot_image_start = ORIGIN(OCRAM);
+
 SECTIONS
 {
     .boot_vectors ORIGIN(OCRAM) :
