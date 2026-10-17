@@ -61,13 +61,13 @@ sidermux-hal/
 
 ## Documentation
 
-The full documentation — target selection, boot flow layering, and
-extension points — lives in the Rust API docs:
+The full documentation, covering target selection, boot flow layering, and
+extension points, lives in the Rust API docs:
 
-- [`sidermux-hal`](https://docs.rs/sidermux-hal) — unified HAL surface and
+- [`sidermux-hal`](https://docs.rs/sidermux-hal): unified HAL surface and
   responsibility split
-- [`sidermux-rt`](https://docs.rs/sidermux-rt) — runtime startup contracts
-- [`sidermux-bootloader`](https://docs.rs/sidermux-bootloader) — bootable
+- [`sidermux-rt`](https://docs.rs/sidermux-rt): runtime startup contracts
+- [`sidermux-bootloader`](https://docs.rs/sidermux-bootloader): bootable
   image and boot profiles
 
 Or read them locally:
