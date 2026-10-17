@@ -5,7 +5,7 @@ use core::{arch::global_asm, panic::PanicInfo};
 
 global_asm!(
     include_str!("boot-entry.S"),
-    runtime_start = sym cyclone_v_rt::_start,
+    runtime_start = sym sidermux_rt::_start,
 );
 
 #[unsafe(no_mangle)]

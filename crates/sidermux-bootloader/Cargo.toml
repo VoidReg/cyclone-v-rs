@@ -1,0 +1,14 @@
+[package]
+name = "sidermux-bootloader"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "sidermux-bootloader"
+path = "src/main.rs"
+bench = false
+test  = false
+
+[dependencies]
+sidermux-hal = {path = "../sidermux-hal"}
+sidermux-rt = {path = "../sidermux-rt"}

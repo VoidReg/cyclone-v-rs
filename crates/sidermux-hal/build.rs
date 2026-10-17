@@ -5,13 +5,13 @@ fn main() {
     let out = PathBuf::from(env::var_os("OUT_DIR").unwrap());
 
     let scripts = [
-        ("ld/memory.x", "cyclone-v-memory.x"),
-        ("ld/sections/text.x", "cyclone-v-text.x"),
-        ("ld/sections/rodata.x", "cyclone-v-rodata.x"),
-        ("ld/sections/data.x", "cyclone-v-data.x"),
-        ("ld/sections/bss.x", "cyclone-v-bss.x"),
-        ("ld/sections/unwind.x", "cyclone-v-unwind.x"),
-        ("ld/sections/stack.x", "cyclone-v-stack.x"),
+        ("ld/memory.x", "sidermux-target-memory.x"),
+        ("ld/sections/text.x", "sidermux-text.x"),
+        ("ld/sections/rodata.x", "sidermux-rodata.x"),
+        ("ld/sections/data.x", "sidermux-data.x"),
+        ("ld/sections/bss.x", "sidermux-bss.x"),
+        ("ld/sections/unwind.x", "sidermux-unwind.x"),
+        ("ld/sections/stack.x", "sidermux-stack.x"),
     ];
 
     for (source, destination) in scripts {

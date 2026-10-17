@@ -1,11 +1,10 @@
 [package]
-name          = "cyclone-v-hal"
+name          = "sidermux-hal"
 version       = "0.1.0"
 edition       = "2024"
 rust-version  = "1.95.0"
-description   = "Bare-metal HAL for Cyclone V family"
-documentation = "https://docs.espressif.com/projects/rust/esp-hal/latest/"
-keywords      = ["embedded", "embedded-hal", "cyclone-v", "hal"]
+description   = "Bare-metal HAL for SoC FPGAs: one interface, many architectures and boards"
+keywords      = ["embedded", "embedded-hal", "fpga", "soc", "no-std"]
 categories    = ["embedded", "hardware-support", "no-std"]
 repository    = "https://github.com/voidreg"
 license       = "MIT OR Apache-2.0"

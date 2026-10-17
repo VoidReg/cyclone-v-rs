@@ -6,8 +6,8 @@ fn main() {
 
     let scripts = [
         ("ld/linkall.x", "linkall.x"),
-        ("ld/sections/boot.x", "boot.x"),
-        ("ld/sections/boot-pack-reserve.x", "boot-pack-reserve.x"),
+        ("ld/sections/boot.x", "sidermux-boot.x"),
+        ("ld/sections/boot-pack-reserve.x", "sidermux-boot-reserve.x"),
     ];
 
     for (source, destination) in scripts {
