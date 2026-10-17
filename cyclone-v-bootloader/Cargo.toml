@@ -12,9 +12,3 @@ test  = false
 [dependencies]
 cyclone-v-hal = {path = "../cyclone-v-hal"}
 cyclone-v-rt = {path = "../cyclone-v-rt"}
-
-[profile.dev]
-panic = "abort"
-
-[profile.release]
-panic = "abort"

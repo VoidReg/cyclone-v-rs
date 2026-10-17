@@ -1,8 +1,13 @@
 [workspace]
 resolver = "3"
-exclude = [
+members = [
     "cyclone-v-hal",
     "cyclone-v-rt",
     "cyclone-v-bootloader",
 ]
-members = ["cyclone-v-bootloader", "cyclone-v-rt"]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
