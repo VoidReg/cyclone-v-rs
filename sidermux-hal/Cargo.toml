@@ -6,7 +6,7 @@ rust-version  = "1.95.0"
 description   = "Bare-metal HAL for SoC FPGAs: one interface, many architectures and boards"
 keywords      = ["embedded", "embedded-hal", "fpga", "soc", "no-std"]
 categories    = ["embedded", "hardware-support", "no-std"]
-repository    = "https://github.com/voidreg"
+repository    = "https://github.com/sidermux/sidermux-hal"
 license       = "MIT OR Apache-2.0"
 
 [features]
