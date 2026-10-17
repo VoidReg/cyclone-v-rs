@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  fmt:
+    name: format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # rustfmt.toml uses unstable options (comment wrapping, import
+      # granularity), so formatting is checked on nightly.
+      - uses: dtolnay/rust-toolchain@nightly
+        with:
+          components: rustfmt
+
+      - run: cargo fmt --all --check
+
+  test:
+    name: tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: test
+
+      # Target-independent tests and doc tests. sidermux-bootloader is a
+      # no-std image binary that requires a SoC feature and has no test
+      # harness, so it is exercised by the clippy/build matrix instead.
+      - run: cargo test -p sidermux-hal --all-features
+
+  clippy:
+    name: clippy (${{ matrix.name }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: hal host
+            args: -p sidermux-hal --all-targets
+          - name: hal host all-features
+            args: -p sidermux-hal --all-targets --features cyclone-v,arch-armv7a
+          - name: rt armv7a
+            args: -p sidermux-rt --target armv7a-none-eabi --features armv7a
+          - name: bootloader cyclone-v
+            args: -p sidermux-bootloader --target armv7a-none-eabi --features cyclone-v
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: armv7a-none-eabi
+          components: clippy
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: ${{ matrix.name }}
+
+      - run: cargo clippy ${{ matrix.args }} -- -D warnings
