@@ -9,6 +9,11 @@ path = "src/main.rs"
 bench = false
 test  = false
 
+[features]
+# SoC selection for the bootable image. Exactly one is required; each SoC
+# feature forwards the SoC and architecture selection to the HAL and runtime.
+cyclone-v = ["sidermux-hal/cyclone-v", "sidermux-rt/armv7a"]
+
 [dependencies]
 sidermux-hal = {path = "../sidermux-hal"}
 sidermux-rt = {path = "../sidermux-rt"}

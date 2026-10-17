@@ -1,3 +1,10 @@
+/*
+ * Cyclone V boot profile: entry assembly.
+ *
+ * Vector table at the image base; the Boot ROM jumps to the slot at +0x4C.
+ * The reset vector branches to boot_entry, which tails into the runtime's
+ * _start.
+ */
 .syntax unified
 .arm
 

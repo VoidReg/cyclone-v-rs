@@ -16,6 +16,20 @@ surface instead of a new project.
 
 - **Cyclone V** (Intel/Altera SoC FPGA, dual Cortex-A9, `armv7a-none-eabi`)
 
+## Target selection
+
+SoC features live on `sidermux-hal` and imply their architecture. The
+bootloader forwards its own SoC feature to both the HAL and the runtime.
+
+| Feature | Effect |
+|---|---|
+| `sidermux-hal/cyclone-v` | Cyclone V SoC support (implies `arch-armv7a`) |
+| `sidermux-hal/arch-armv7a` | ARMv7-A CPU support, SoC-independent |
+| `sidermux-bootloader/cyclone-v` | Builds the Cyclone V boot image (forwards both) |
+
+`sidermux-hal` builds target-independent with no SoC selected;
+`sidermux-bootloader` requires exactly one SoC feature.
+
 ## LICENSE
 
 MIT or Apache 2.0 - Copyright © 2026 sidermux.

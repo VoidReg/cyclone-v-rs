@@ -1,0 +1,11 @@
+[package]
+name = "sidermux-rt"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+# Architecture startup selection. Binaries enable this through their SoC
+# feature (sidermux-bootloader's cyclone-v forwards here).
+armv7a = []
+
+[dependencies]

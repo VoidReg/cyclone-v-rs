@@ -9,4 +9,13 @@ categories    = ["embedded", "hardware-support", "no-std"]
 repository    = "https://github.com/voidreg"
 license       = "MIT OR Apache-2.0"
 
+[features]
+# SoC targets. Each SoC implies the architecture family it is built on;
+# the bootloader forwards its own SoC feature to these.
+cyclone-v = ["arch-armv7a"]
+
+# Architecture support. Selectable without a SoC for CPU-level code that
+# several SoCs can share; binaries must still pick exactly one SoC.
+arch-armv7a = []
+
 [dependencies]

@@ -1,3 +1,16 @@
+/*
+ * ARMv7-A startup for the supported Cyclone V Boot ROM handoff.
+ *
+ * Incoming (SoC-specific, Cyclone V Boot ROM): r0 = rom_info address,
+ * r1 = rom_info length.
+ * Outgoing (this runtime's convention): boot_main(r0 = rom_info,
+ * r1 = rom_info_len). The conventions are independent; the runtime currently
+ * forwards the incoming registers unchanged.
+ *
+ * Entry-state assumptions (Supervisor mode, IRQ/FIQ masked, cache/MMU in
+ * Boot ROM state) are Cyclone V-scoped and must be re-examined per SoC.
+ */
+
 .syntax unified
 .arm
 

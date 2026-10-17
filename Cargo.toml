@@ -1,9 +1,9 @@
 [workspace]
 resolver = "3"
 members = [
-    "crates/sidermux-hal",
-    "crates/sidermux-rt",
-    "crates/sidermux-bootloader",
+    "sidermux-hal",
+    "sidermux-rt",
+    "sidermux-bootloader",
 ]
 
 [profile.dev]

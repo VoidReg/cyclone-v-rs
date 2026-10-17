@@ -1,3 +1,9 @@
+/*
+ * Cyclone V boot profile: packaging reservation.
+ *
+ * Reserves trailer space so the packed boot image (including CRC and
+ * padding) stays 16-byte aligned and within the profile's arena limit.
+ */
 SECTIONS
 {
     .boot_pack_reserve (NOLOAD) :
