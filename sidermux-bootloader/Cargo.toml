@@ -2,6 +2,9 @@
 name = "sidermux-bootloader"
 version = "0.1.0"
 edition = "2024"
+description = "Bootable image flow for sidermux targets"
+repository = "https://github.com/sidermux/sidermux-hal"
+license = "MIT OR Apache-2.0"
 
 [[bin]]
 name = "sidermux-bootloader"

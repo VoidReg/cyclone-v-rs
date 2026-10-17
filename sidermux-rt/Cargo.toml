@@ -2,6 +2,9 @@
 name = "sidermux-rt"
 version = "0.1.0"
 edition = "2024"
+description = "Runtime startup for sidermux targets, selected per architecture"
+repository = "https://github.com/sidermux/sidermux-hal"
+license = "MIT OR Apache-2.0"
 
 [features]
 # Architecture startup selection. Binaries enable this through their SoC
